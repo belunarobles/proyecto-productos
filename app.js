@@ -11,11 +11,10 @@ app.use(express.static(__dirname + '/public'))
 
 app.use('/', require('./router'))
 
-// Se ejecuta si no se encuentra la pagina buscada
 app.use((req, res, next) => {
-    res.status(404).send('Not Found')
+    res.status(404).send('Not found')
 })
 
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5000
 
-app.listen(port, () => console.log('http://localhost:' + port))
+app.listen(port, () => console.log(`http://localhost:${port}`))
