@@ -12,7 +12,8 @@ app.use(express.static(__dirname + '/public'))
 
 // Se utliza para que el contenido de un formulario se pueda visualizar en el console log.
 app.use(express.urlencoded({extended : false}))
-app.use(methodOverride('_mehotd'))
+
+app.use(methodOverride('_method'))
 
 app.use('/', require('./routes/productos'))
 app.use('/', require('./routes/contacto'))
